@@ -1,0 +1,459 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		525C78F61DE3D68A00D21888 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 525C78F51DE3D68A00D21888 /* main.m */; };
+		525C78F91DE3D68A00D21888 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 525C78F81DE3D68A00D21888 /* AppDelegate.m */; };
+		525C78FC1DE3D68A00D21888 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 525C78FB1DE3D68A00D21888 /* ViewController.m */; };
+		525C78FF1DE3D68A00D21888 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 525C78FD1DE3D68A00D21888 /* Main.storyboard */; };
+		525C79021DE3D68A00D21888 /* Hope.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 525C79001DE3D68A00D21888 /* Hope.xcdatamodeld */; };
+		525C79041DE3D68A00D21888 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 525C79031DE3D68A00D21888 /* Assets.xcassets */; };
+		525C79071DE3D68A00D21888 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 525C79051DE3D68A00D21888 /* LaunchScreen.storyboard */; };
+		525C79121DE3D68A00D21888 /* HopeTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 525C79111DE3D68A00D21888 /* HopeTests.m */; };
+		52A11AB01DE4DD8000188C08 /* CalculatorBrain.m in Sources */ = {isa = PBXBuildFile; fileRef = 52A11AAF1DE4DD8000188C08 /* CalculatorBrain.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		525C790E1DE3D68A00D21888 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 525C78E91DE3D68A00D21888 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 525C78F01DE3D68A00D21888;
+			remoteInfo = Hope;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		525C78F11DE3D68A00D21888 /* Hope.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Hope.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		525C78F51DE3D68A00D21888 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		525C78F71DE3D68A00D21888 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		525C78F81DE3D68A00D21888 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		525C78FA1DE3D68A00D21888 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		525C78FB1DE3D68A00D21888 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		525C78FE1DE3D68A00D21888 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		525C79011DE3D68A00D21888 /* Hope.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Hope.xcdatamodel; sourceTree = "<group>"; };
+		525C79031DE3D68A00D21888 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		525C79061DE3D68A00D21888 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		525C79081DE3D68A00D21888 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		525C790D1DE3D68A00D21888 /* HopeTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HopeTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		525C79111DE3D68A00D21888 /* HopeTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HopeTests.m; sourceTree = "<group>"; };
+		525C79131DE3D68A00D21888 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		52A11AAE1DE4DD8000188C08 /* CalculatorBrain.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CalculatorBrain.h; sourceTree = "<group>"; };
+		52A11AAF1DE4DD8000188C08 /* CalculatorBrain.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CalculatorBrain.m; sourceTree = "<group>"; wrapsLines = 1; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		525C78EE1DE3D68A00D21888 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		525C790A1DE3D68A00D21888 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		525C78E81DE3D68A00D21888 = {
+			isa = PBXGroup;
+			children = (
+				525C78F31DE3D68A00D21888 /* Hope */,
+				525C79101DE3D68A00D21888 /* HopeTests */,
+				525C78F21DE3D68A00D21888 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		525C78F21DE3D68A00D21888 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				525C78F11DE3D68A00D21888 /* Hope.app */,
+				525C790D1DE3D68A00D21888 /* HopeTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		525C78F31DE3D68A00D21888 /* Hope */ = {
+			isa = PBXGroup;
+			children = (
+				525C78F71DE3D68A00D21888 /* AppDelegate.h */,
+				525C78F81DE3D68A00D21888 /* AppDelegate.m */,
+				525C78FA1DE3D68A00D21888 /* ViewController.h */,
+				525C78FB1DE3D68A00D21888 /* ViewController.m */,
+				525C78FD1DE3D68A00D21888 /* Main.storyboard */,
+				525C79031DE3D68A00D21888 /* Assets.xcassets */,
+				525C79051DE3D68A00D21888 /* LaunchScreen.storyboard */,
+				525C79081DE3D68A00D21888 /* Info.plist */,
+				525C79001DE3D68A00D21888 /* Hope.xcdatamodeld */,
+				525C78F41DE3D68A00D21888 /* Supporting Files */,
+				52A11AAE1DE4DD8000188C08 /* CalculatorBrain.h */,
+				52A11AAF1DE4DD8000188C08 /* CalculatorBrain.m */,
+			);
+			path = Hope;
+			sourceTree = "<group>";
+		};
+		525C78F41DE3D68A00D21888 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				525C78F51DE3D68A00D21888 /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		525C79101DE3D68A00D21888 /* HopeTests */ = {
+			isa = PBXGroup;
+			children = (
+				525C79111DE3D68A00D21888 /* HopeTests.m */,
+				525C79131DE3D68A00D21888 /* Info.plist */,
+			);
+			path = HopeTests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		525C78F01DE3D68A00D21888 /* Hope */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 525C79161DE3D68A00D21888 /* Build configuration list for PBXNativeTarget "Hope" */;
+			buildPhases = (
+				525C78ED1DE3D68A00D21888 /* Sources */,
+				525C78EE1DE3D68A00D21888 /* Frameworks */,
+				525C78EF1DE3D68A00D21888 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Hope;
+			productName = Hope;
+			productReference = 525C78F11DE3D68A00D21888 /* Hope.app */;
+			productType = "com.apple.product-type.application";
+		};
+		525C790C1DE3D68A00D21888 /* HopeTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 525C79191DE3D68A00D21888 /* Build configuration list for PBXNativeTarget "HopeTests" */;
+			buildPhases = (
+				525C79091DE3D68A00D21888 /* Sources */,
+				525C790A1DE3D68A00D21888 /* Frameworks */,
+				525C790B1DE3D68A00D21888 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				525C790F1DE3D68A00D21888 /* PBXTargetDependency */,
+			);
+			name = HopeTests;
+			productName = HopeTests;
+			productReference = 525C790D1DE3D68A00D21888 /* HopeTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		525C78E91DE3D68A00D21888 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0810;
+				ORGANIZATIONNAME = jinguiwang;
+				TargetAttributes = {
+					525C78F01DE3D68A00D21888 = {
+						CreatedOnToolsVersion = 8.1;
+						DevelopmentTeam = UBF8T346G9;
+						ProvisioningStyle = Automatic;
+					};
+					525C790C1DE3D68A00D21888 = {
+						CreatedOnToolsVersion = 8.1;
+						DevelopmentTeam = UBF8T346G9;
+						ProvisioningStyle = Automatic;
+						TestTargetID = 525C78F01DE3D68A00D21888;
+					};
+				};
+			};
+			buildConfigurationList = 525C78EC1DE3D68A00D21888 /* Build configuration list for PBXProject "Hope" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 525C78E81DE3D68A00D21888;
+			productRefGroup = 525C78F21DE3D68A00D21888 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				525C78F01DE3D68A00D21888 /* Hope */,
+				525C790C1DE3D68A00D21888 /* HopeTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		525C78EF1DE3D68A00D21888 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				525C79071DE3D68A00D21888 /* LaunchScreen.storyboard in Resources */,
+				525C79041DE3D68A00D21888 /* Assets.xcassets in Resources */,
+				525C78FF1DE3D68A00D21888 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		525C790B1DE3D68A00D21888 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		525C78ED1DE3D68A00D21888 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				525C78FC1DE3D68A00D21888 /* ViewController.m in Sources */,
+				525C79021DE3D68A00D21888 /* Hope.xcdatamodeld in Sources */,
+				525C78F91DE3D68A00D21888 /* AppDelegate.m in Sources */,
+				525C78F61DE3D68A00D21888 /* main.m in Sources */,
+				52A11AB01DE4DD8000188C08 /* CalculatorBrain.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		525C79091DE3D68A00D21888 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				525C79121DE3D68A00D21888 /* HopeTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		525C790F1DE3D68A00D21888 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 525C78F01DE3D68A00D21888 /* Hope */;
+			targetProxy = 525C790E1DE3D68A00D21888 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		525C78FD1DE3D68A00D21888 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				525C78FE1DE3D68A00D21888 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		525C79051DE3D68A00D21888 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				525C79061DE3D68A00D21888 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		525C79141DE3D68A00D21888 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVES = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.1;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Debug;
+		};
+		525C79151DE3D68A00D21888 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVES = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.1;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = NO;
+			};
+			name = Release;
+		};
+		525C79171DE3D68A00D21888 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = UBF8T346G9;
+				INFOPLIST_FILE = Hope/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.microsoft.Hope;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		525C79181DE3D68A00D21888 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = UBF8T346G9;
+				INFOPLIST_FILE = Hope/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.microsoft.Hope;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		525C791A1DE3D68A00D21888 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				DEVELOPMENT_TEAM = UBF8T346G9;
+				INFOPLIST_FILE = HopeTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.microsoft.HopeTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Hope.app/Hope";
+			};
+			name = Debug;
+		};
+		525C791B1DE3D68A00D21888 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				DEVELOPMENT_TEAM = UBF8T346G9;
+				INFOPLIST_FILE = HopeTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.microsoft.HopeTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Hope.app/Hope";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		525C78EC1DE3D68A00D21888 /* Build configuration list for PBXProject "Hope" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				525C79141DE3D68A00D21888 /* Debug */,
+				525C79151DE3D68A00D21888 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		525C79161DE3D68A00D21888 /* Build configuration list for PBXNativeTarget "Hope" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				525C79171DE3D68A00D21888 /* Debug */,
+				525C79181DE3D68A00D21888 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		525C79191DE3D68A00D21888 /* Build configuration list for PBXNativeTarget "HopeTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				525C791A1DE3D68A00D21888 /* Debug */,
+				525C791B1DE3D68A00D21888 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		525C79001DE3D68A00D21888 /* Hope.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				525C79011DE3D68A00D21888 /* Hope.xcdatamodel */,
+			);
+			currentVersion = 525C79011DE3D68A00D21888 /* Hope.xcdatamodel */;
+			path = Hope.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = 525C78E91DE3D68A00D21888 /* Project object */;
+}
