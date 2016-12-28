@@ -1,11 +1,3 @@
-//
-//  AppDelegate.m
-//  DIskUsage
-//
-//  Created by Jingui Wang on 12/27/16.
-//  Copyright © 2016 jinguiwang. All rights reserved.
-//
-
 #import "AppDelegate.h"
 
 @interface AppDelegate ()

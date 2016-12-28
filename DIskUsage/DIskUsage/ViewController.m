@@ -1,11 +1,3 @@
-//
-//  ViewController.m
-//  DIskUsage
-//
-//  Created by Jingui Wang on 12/27/16.
-//  Copyright © 2016 jinguiwang. All rights reserved.
-//
-
 #import "ViewController.h"
 
 @interface ViewController ()
@@ -67,7 +59,7 @@ static unsigned long long pageSize() {
     
     [self log:[NSString stringWithFormat:@"block size：%llu", pageSize()]];
     
-    NSInteger fileCount = 4;
+    NSInteger fileCount = 1000;
     
     [self testMethod:@"folderSizeAtPath1" fileCount:fileCount withBlock:^long long(NSString *folderPath){
         return [self folderSizeAtPath1:folderPath];
@@ -109,49 +101,77 @@ static unsigned long long pageSize() {
 }
 
 - (unsigned long long) folderSizeAtPath2:(NSString*) folderPath{
+    NSFileManager* fileManager = [NSFileManager defaultManager];
+    if ([fileManager fileExistsAtPath:folderPath] == NO) {
+        return 0;
+    }
     unsigned long long folderSize = 0;
     NSError *error = nil;
-    NSArray *properties = [NSArray arrayWithObjects:
+    NSArray *properties = @[
                            NSURLLocalizedNameKey,
                            NSURLIsDirectoryKey,
                            NSURLIsRegularFileKey,
                            NSURLFileSizeKey,
                            NSURLFileAllocatedSizeKey,
                            NSURLTotalFileSizeKey,
-                           NSURLTotalFileAllocatedSizeKey, nil];
+                           NSURLTotalFileAllocatedSizeKey
+                           ];
+    
+    __block BOOL errorDidOccur = NO;
+    BOOL (^errorHandler)(NSURL *, NSError *) = ^(NSURL *url, NSError *localError) {
+        errorDidOccur = YES;
+        return NO;
+    };
+    
+    // prefetching some properties during traversal will speed up things a bit.
+    NSArray *prefetchedProperties = @[
+                                      NSURLIsRegularFileKey,
+                                      NSURLFileSizeKey,
+                                      NSURLFileAllocatedSizeKey,
+                                      NSURLTotalFileAllocatedSizeKey,
+                                      ];
     
     NSURL *url = [NSURL fileURLWithPath:folderPath];
-    NSLog(@"doc url: %@", url);
-    NSArray *array = [[NSFileManager defaultManager]
-                      contentsOfDirectoryAtURL:url
-                      includingPropertiesForKeys:properties
-                      options:0
-                      error:&error];
-    
-    if (array == nil) {
-        // Handle the error
-        NSLog(@"ERROR: there is something wrong with the app directory.");
-    } else {
-        for (NSURL* urlItem in array) {
-            // Get the type of this item, making sure we only sum up sizes of regular files.
-            NSNumber *isRegularFile;
-            if (! [urlItem getResourceValue:&isRegularFile forKey:NSURLIsRegularFileKey error:&error]) {
-                NSLog(@"ERROR: %@", error);
+    NSDirectoryEnumerator *enumerator = [fileManager enumeratorAtURL:url
+                                          includingPropertiesForKeys:prefetchedProperties
+                                                             options:(NSDirectoryEnumerationOptions)0
+                                                        errorHandler:errorHandler];
+
+    for (NSURL *contentItemURL in enumerator) {
+        if (errorDidOccur)
+            return 0;
+        
+        // Get the type of this item, making sure we only sum up sizes of regular files.
+        NSNumber *isRegularFile;
+        if (! [contentItemURL getResourceValue:&isRegularFile forKey:NSURLIsRegularFileKey error:&error]) {
+            return 0;
+        }
+        if (! [isRegularFile boolValue])
+            continue; // Ignore anything except regular files.
+        
+        // To get the file's size we first try the most comprehensive value in terms of what the file may use on disk.
+        // This includes metadata, compression (on file system level) and block size.
+        NSNumber *fileSize;
+        if (! [contentItemURL getResourceValue:&fileSize forKey:NSURLTotalFileAllocatedSizeKey error:&error]) {
+            return 0;
+        }
+        
+        // In case the value is unavailable we use the fallback value (excluding meta data and compression)
+        // This value should always be available.
+        if (fileSize == nil) {
+            if (! [contentItemURL getResourceValue:&fileSize forKey:NSURLFileAllocatedSizeKey error:&error]) {
                 return 0;
             }
-
-            if (! [isRegularFile boolValue]) {
-                continue; // Ignore anything except regular files.
-            }
-            
-            NSNumber *fileSize = nil;
-            [url getResourceValue:&fileSize forKey:NSURLFileSizeKey error:NULL];
-            NSNumber *fileAllocatedSize = nil;
-            [url getResourceValue:&fileAllocatedSize forKey:NSURLFileAllocatedSizeKey error:NULL];
-            folderSize += fileSize.unsignedLongLongValue;
-            NSLog(@"url: %@, size1: %@, size2: %@", urlItem, fileSize, fileAllocatedSize);
+            NSAssert(fileSize != nil, @"huh? NSURLFileAllocatedSizeKey should always return a value");
         }
+        
+        NSNumber *fileAllocatedSize;
+        [contentItemURL getResourceValue:&fileAllocatedSize forKey:NSURLFileAllocatedSizeKey error:&error];
+        // We're good, add up the value.
+        folderSize += [fileSize unsignedLongLongValue];
+        //NSLog(@"url: %@, size1: %@, size2: %@", contentItemURL, fileSize, fileAllocatedSize);
     }
+
 
     return folderSize;
 }
@@ -159,7 +179,7 @@ static unsigned long long pageSize() {
 - (unsigned long long)allocatedSize:(NSString *)folderPath
 {
     NSError *error = nil;
-    unsigned long long allocatedSize;
+    unsigned long long allocatedSize = 0;
     NSFileManager* fileManager = [NSFileManager defaultManager];
     if ([fileManager fileExistsAtPath:folderPath] == NO) {
         return 0;
@@ -216,7 +236,9 @@ static unsigned long long pageSize() {
         // We're good, add up the value.
         allocatedSize += [fileSize unsignedLongLongValue];
     }
-    
+    if (errorDidOccur == YES) {
+        return 0;
+    }
     return allocatedSize;
 }
 
