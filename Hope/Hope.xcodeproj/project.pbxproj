@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		52029B5A1DF26A9D006DC194 /* HockeySDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 52029B581DF26A9D006DC194 /* HockeySDK.framework */; };
+		52029B5B1DF26A9D006DC194 /* HockeySDKResources.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 52029B591DF26A9D006DC194 /* HockeySDKResources.bundle */; };
 		525C78F61DE3D68A00D21888 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 525C78F51DE3D68A00D21888 /* main.m */; };
 		525C78F91DE3D68A00D21888 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 525C78F81DE3D68A00D21888 /* AppDelegate.m */; };
 		525C78FC1DE3D68A00D21888 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 525C78FB1DE3D68A00D21888 /* ViewController.m */; };
@@ -29,6 +31,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		52029B581DF26A9D006DC194 /* HockeySDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = HockeySDK.framework; sourceTree = "<group>"; };
+		52029B591DF26A9D006DC194 /* HockeySDKResources.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = HockeySDKResources.bundle; sourceTree = "<group>"; };
 		525C78F11DE3D68A00D21888 /* Hope.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Hope.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		525C78F51DE3D68A00D21888 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		525C78F71DE3D68A00D21888 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -52,6 +56,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				52029B5A1DF26A9D006DC194 /* HockeySDK.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -65,9 +70,28 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		52029B181DF25A5D006DC194 /* Vendor */ = {
+			isa = PBXGroup;
+			children = (
+				52029B571DF26A9D006DC194 /* HockeySDK.embeddedframework */,
+			);
+			name = Vendor;
+			sourceTree = "<group>";
+		};
+		52029B571DF26A9D006DC194 /* HockeySDK.embeddedframework */ = {
+			isa = PBXGroup;
+			children = (
+				52029B581DF26A9D006DC194 /* HockeySDK.framework */,
+				52029B591DF26A9D006DC194 /* HockeySDKResources.bundle */,
+			);
+			name = HockeySDK.embeddedframework;
+			path = "HockeySDK-iOS/HockeySDK.embeddedframework";
+			sourceTree = "<group>";
+		};
 		525C78E81DE3D68A00D21888 = {
 			isa = PBXGroup;
 			children = (
+				52029B181DF25A5D006DC194 /* Vendor */,
 				525C78F31DE3D68A00D21888 /* Hope */,
 				525C79101DE3D68A00D21888 /* HopeTests */,
 				525C78F21DE3D68A00D21888 /* Products */,
@@ -129,6 +153,7 @@
 				525C78ED1DE3D68A00D21888 /* Sources */,
 				525C78EE1DE3D68A00D21888 /* Frameworks */,
 				525C78EF1DE3D68A00D21888 /* Resources */,
+				52029B561DF269B0006DC194 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -204,6 +229,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				525C79071DE3D68A00D21888 /* LaunchScreen.storyboard in Resources */,
+				52029B5B1DF26A9D006DC194 /* HockeySDKResources.bundle in Resources */,
 				525C79041DE3D68A00D21888 /* Assets.xcassets in Resources */,
 				525C78FF1DE3D68A00D21888 /* Main.storyboard in Resources */,
 			);
@@ -217,6 +243,22 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		52029B561DF269B0006DC194 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/bash;
+			shellScript = "FILE=\"${SRCROOT}/HockeySDK-iOS/BuildAgent\"\nif [ -f \"$FILE\" ]; then\n    \"$FILE\"\nfi";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		525C78ED1DE3D68A00D21888 /* Sources */ = {
@@ -365,6 +407,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = UBF8T346G9;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/HockeySDK-iOS/HockeySDK.embeddedframework",
+				);
 				INFOPLIST_FILE = Hope/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.microsoft.Hope;
@@ -377,6 +423,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = UBF8T346G9;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/HockeySDK-iOS/HockeySDK.embeddedframework",
+				);
 				INFOPLIST_FILE = Hope/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.microsoft.Hope;
