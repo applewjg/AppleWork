@@ -1,12 +1,19 @@
+//
+//  PrivacyStatementVCViewController.m
+//  MyTest
+//
+//  Created by Jingui Wang on 1/26/17.
+//  Copyright © 2017 jinguiwang. All rights reserved.
+//
 
+#import "PrivacyStatementVCViewController.h"
 
-#import "RootViewController.h"
-
-@interface RootViewController ()
+@interface PrivacyStatementVCViewController ()
+@property (nonatomic, retain) IBOutlet UIWebView* webView;
 
 @end
 
-@implementation RootViewController
+@implementation PrivacyStatementVCViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
