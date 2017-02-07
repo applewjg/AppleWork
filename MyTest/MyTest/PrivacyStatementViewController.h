@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface PrivacyStatementVCViewController : UIViewController<UIWebViewDelegate>
+@interface PrivacyStatementViewController : UIViewController<UIWebViewDelegate>
 
 @end

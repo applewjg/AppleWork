@@ -2,6 +2,7 @@
 #import "AppDelegate.h"
 #import "RootViewController.h"
 #import "FeedbackViewController.h"
+#import "WKWebViewController.h"
 
 @interface AppDelegate ()
 
@@ -49,40 +50,43 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     //self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
+	self.window.frame = [[UIScreen mainScreen] bounds];
     //self.window.rootViewController = [[RootViewController alloc] initWithNibName:@"RootViewController" bundle:nil];
 	
 	self.window.backgroundColor = [UIColor whiteColor];
+	
 	//a.初始化一个tabBar控制器
-	UITabBarController *tb = [[UITabBarController alloc] init];
-	//设置控制器为Window的根控制器
-	self.window.rootViewController = tb;
-	
-	UIViewController *rootView = [[RootViewController alloc] initWithNibName:@"RootViewController" bundle:nil];;
-	
-	UINavigationController *nav0 = [[UINavigationController alloc] initWithRootViewController:rootView];
-	
-	nav0.tabBarItem.title = @"首页";
+	UITabBarController *rootTabBar = [[UITabBarController alloc] init];
 
+	//设置控制器为Window的根控制器
+	self.window.rootViewController = rootTabBar;
+	
+	UIViewController *c0 = [[RootViewController alloc] initWithNibName:@"RootViewController" bundle:nil];
+	c0.view.backgroundColor=[UIColor whiteColor];
+	
+	UINavigationController *nav0 = [[UINavigationController alloc] initWithRootViewController:c0];
+	nav0.tabBarItem.title = @"首页";
+	
+	
 	UIViewController *c1 = [[FeedbackViewController alloc] initWithNibName:@"FeedbackView" bundle:nil];
 	c1.view.backgroundColor=[UIColor whiteColor];
-	c1.tabBarItem.title=@"消息";
-
+	UINavigationController *nav1 = [[UINavigationController alloc] initWithRootViewController:c1];
+	nav1.tabBarItem.title=@"消息";
+	
 	//c1.tabBarItem.image=[UIImage imageNamed:@"tab_recent_nor"];
 	//c1.tabBarItem.badgeValue=@"123";
 	
-	UIViewController *c2=[[UIViewController alloc]init];
-	c2.view.backgroundColor=[UIColor brownColor];
-	c2.tabBarItem.title=@"联系人";
-	//c2.tabBarItem.image=[UIImage imageNamed:@"tab_buddy_nor"];
+	UIViewController* c2 = [[WKWebViewController alloc] init];
+	UINavigationController *nav2 = [[UINavigationController alloc] initWithRootViewController:c2];
+	nav2.tabBarItem.title=@"联系人";
 	
 	UIViewController *c3=[[UIViewController alloc]init];
-	c3.tabBarItem.title=@"动态";
-	//c3.tabBarItem.image=[UIImage imageNamed:@"tab_qworld_nor"];
+	UINavigationController *nav3 = [[UINavigationController alloc] initWithRootViewController:c3];
+	nav3.tabBarItem.title=@"动态";
 	
 	UIViewController *c4=[[UIViewController alloc]init];
-	c4.tabBarItem.title=@"设置";
-	//c4.tabBarItem.image=[UIImage imageNamed:@"tab_me_nor"];
-	
+	UINavigationController *nav4 = [[UINavigationController alloc] initWithRootViewController:c4];
+	nav4.tabBarItem.title=@"设置";
 	
 	//c.添加子控制器到ITabBarController中
 	//c.1第一种方式
@@ -90,7 +94,7 @@
 	//    [tb addChildViewController:c2];
 	
 	//c.2第二种方式
-	tb.viewControllers=@[nav0, c1,c2,c3,c4];
+	rootTabBar.viewControllers=@[nav0, nav1, nav2, nav3,nav4];
 	
     [self.window makeKeyAndVisible];
     NSLog(@"didFinishLaunchingWithOptions");

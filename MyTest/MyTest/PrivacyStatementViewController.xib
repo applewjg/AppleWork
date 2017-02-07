@@ -20,13 +20,18 @@
             <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <webView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="w5w-NS-YKh">
-                    <rect key="frame" x="16" y="20" width="343" height="627"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <webView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="w5w-NS-YKh">
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                     <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                 </webView>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstAttribute="trailing" secondItem="w5w-NS-YKh" secondAttribute="trailing" id="1Hv-8Q-oD1"/>
+                <constraint firstItem="w5w-NS-YKh" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="4Ht-mM-nfN"/>
+                <constraint firstItem="w5w-NS-YKh" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="L8q-lk-JA5"/>
+                <constraint firstAttribute="bottom" secondItem="w5w-NS-YKh" secondAttribute="bottom" id="XcR-Ml-6Ve"/>
+            </constraints>
             <point key="canvasLocation" x="34.5" y="53.5"/>
         </view>
     </objects>

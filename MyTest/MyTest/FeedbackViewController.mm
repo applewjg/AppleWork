@@ -7,6 +7,9 @@
 //
 
 #import "FeedbackViewController.h"
+#import "PrivacyStatementViewController.h"
+#import "AppDelegate.h"
+#import "MyUIApplication.h"
 
 @interface FeedbackViewController ()
 
@@ -105,17 +108,25 @@
 {
 	/*
 	UIApplication *application = [UIApplication sharedApplication];
-	NSURL *URL = [NSURL URLWithString:@"http://www.baidu.com"];
+	NSURL *URL = [NSURL URLWithString:@"https://privacy.microsoft.com/en-us/privacystatement"];
 	[application openURL:URL options:@{} completionHandler:^(BOOL success) {
 		if (success) {
 			NSLog(@"Opened url");
 		}
 	}];*/
 	
-	MsoPrivacyStatementViewController_iPad* privacyViewController =
-	[MsoPrivacyStatementViewController_iPad privacyStatementViewController:_uiModel];
+	NSLog(@"presentPrivacyStatement");
 	
-	[[self navigationController] pushViewController:privacyViewController animated:YES];
+	PrivacyStatementViewController *pVC = [[PrivacyStatementViewController alloc] initWithNibName:@"PrivacyStatementViewController" bundle:nil];
+
+	pVC.title = @"Feedback Viewer";
+
+	UIBarButtonItem *rightButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd  target:self action:@selector(selectRightAction:)];
+	pVC.navigationItem.rightBarButtonItem = rightButton;
+	
+	[[pVC navigationController] setNavigationBarHidden:NO];
+	
+	[[self navigationController] pushViewController:pVC animated:YES];
 
 }
 
